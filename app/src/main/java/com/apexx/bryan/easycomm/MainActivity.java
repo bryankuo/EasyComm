@@ -1,57 +1,21 @@
 package com.apexx.bryan.easycomm;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
-class GridAdapter extends BaseAdapter {
-    Context context;
-    String string="123456789";
-
-    public GridAdapter(Context c){
-        context = c;
-    }
-
-    @Override
-    public int getCount() {
-        return string.length();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return string.charAt(position);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
-        TextView textView = new TextView(context);
-        textView.setText(String.valueOf(string.charAt(position)));
-        return textView;
-    }
-}
-*/
 
 public class MainActivity extends AppCompatActivity {
     // how to import ( https://goo.gl/6s6wgm )
@@ -100,9 +64,10 @@ public class MainActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                //Toast.makeText(HelloGridView.this, "" + position,
-                //        Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, "You select " + imgText[position], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "You select " + imgText[position], Toast.LENGTH_SHORT).show();
+                if ( imgText[position].equalsIgnoreCase("security") ) {
+                    startActivity(new Intent(MainActivity.this, NfcActivity.class));
+                }
             }
         });
     }
