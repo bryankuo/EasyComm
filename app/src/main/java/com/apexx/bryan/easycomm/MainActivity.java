@@ -25,11 +25,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_action_security
             // scrolling, more icon is possible
     };
-    private String[] imgText = {
-            "doorphone", "package",
-            "message", "bulletin",
-            "security"
-    };
+    private String[] imgText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        imgText = getResources().getStringArray(R.array.func_entries); // ( https://goo.gl/z74Zov )
 
         // ( https://goo.gl/7sH5Vb )
         List<Map<String, Object>> items = new ArrayList<>();

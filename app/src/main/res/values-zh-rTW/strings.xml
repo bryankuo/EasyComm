@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EasyComm</string>
+    <string name="action_settings"> 設  定 </string>
+		<string name="title_activity_main">  主 畫 面  </string>
+		<string name="title_activity_nfc">NFC 讀 卡 功 能</string>
+    <string-array name="func_entries">
+        <item>對 講 機 </item>
+        <item>郵件包裹 </item>
+				<item>住戶訊息 </item>
+        <item>社區公告 </item>
+        <item>保全設定 </item>
+    </string-array>
+</resources>
